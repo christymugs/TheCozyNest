@@ -4,99 +4,69 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>The Cozy Nest</title>
-        <link rel="stylesheet" href="styles.css">
+        <title>The Cozy Nest and Niche</title>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <div class="container">
-            <!-- Header Image -->
-            <div class="header-image">
-                <img src="./assets/header-image.jpg" alt="The Cozy Nest">
-            </div>
-
-            <!-- Profile Picture and Info -->
-            <div class="profile-info">
-                <div class="profile-pic">
-                    <img src="./assets/logo.png" alt="Profile Picture">
+        <header>
+            <h2>The Cozy Nest</h2>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#">Appliances</a></li>
+                    <li><a href="#">Kitchen</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Cart</a></li>
+                </ul>
+            </nav>
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="">The Cozy Nest and Niche</h1>
+                    <p>CREATE YOUR HAVEN</p>
+                    <a href="about.html" class="button">Learn more</a>
                 </div>
-            </div>
+            </section>
+        </header>
 
-            <!-- Bio Section -->
-            <div class="bio">
-                <h1>The Cozy Nest</h1>
-                <p>Welcome to The Cozy Nest and Niche. Discover inspiring home decor ideas, cozy living spaces, and all
-                    the essentials to make your house feel like a home. From modern designs to rustic charm, we curate
-                    the best products and tips to help you create a space you’ll love. Explore our favorite finds and
-                    transform your home into a haven!</p>
+        <!-- Featured Products Section -->
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="product-list">
+                <a href="https://amzn.to/477rU4w" class="product">
+                    <img src="./assets/kitchen/kitchen1.jpg" alt="Drew Barrymore Air Fryer">
+                    <h3>Drew Barrymore Air Fryer:<br>The Ultimate Kitchen Upgrade</h3>
+                    <p>$58</p>
+                </a>
+                <a href="https://amzn.to/3MoIinx" class="product">
+                    <img src="./assets/kitchen-appliances-header.jpg" alt="Beige Comforter Set Queen">
+                    <h3>Beige Comforter Set Queen</h3>
+                    <p>$38</p>
+                </a>
+                <a href="https://amzn.to/3MpLCyK" class="product">
+                    <img src="./assets/kitchen-decor-header.jpg" alt="6FT Artificial Ficus Tree">
+                    <h3>6FT Artificial Ficus Tree</h3>
+                    <p>$55</p>
+                </a>
             </div>
-
-            <!-- Main Boards Section -->
-            <div class="boards-section">
-                <h2>Explore Our Boards</h2>
-                <div class="boards">
-                    <div class="board" onclick="openBoard('kitchen')">
-                        <img src="./assets/kitchen/kitchen-header.jpg" alt="Kitchen">
-                        <p>Kitchen</p>
-                    </div>
-                    <div class="board" onclick="openBoard('living-room')">
-                        <img src="./assets/livingroom-header.jpg" alt="Living Room">
-                        <p>Living Room</p>
-                    </div>
-                    <div class="board" onclick="openBoard('bedroom')">
-                        <img src="./assets/bedroom-header.jpg" alt="Bedroom">
-                        <p>Bedroom</p>
-                    </div>
-                    <div class="board" onclick="openBoard('bathroom')">
-                        <img src="./assets/bathroom-header.jpg" alt="Bathroom">
-                        <p>Bathroom</p>
-                    </div>
-                    <div class="board" onclick="openBoard('office')">
-                        <img src="./assets/office-header.jpg" alt="Office">
-                        <p>Office</p>
-                    </div>
-                    <div class="board" onclick="openBoard('dining')">
-                        <img src="./assets/dining-header.jpg" alt="Dining">
-                        <p>Dining</p>
-                    </div>
-                    <div class="board" onclick="openBoard('outdoor')">
-                        <img src="./assets/outdoor-header.jpg" alt="Outdoor Space">
-                        <p>Outdoor Space</p>
-                    </div>
-                </div>
+            <a href="#" class="button-dark" style="text-align: center;">Shop all</a>
+        </section>
+        <!-- Signup Section -->
+        <section class="signup-section">
+            <h2>The Cozy Nest and Niche</h2>
+            <p>Sign up with your email address to receive news and updates.</p>
+            <form action="#">
+                <input type="email" placeholder="Email Address" required>
+                <button type="submit" class="button-dark">Sign Up</button>
+            </form>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Follow</a>
             </div>
+        </section>
 
-            <!-- Sub-Boards Section (Initially Hidden) -->
-            <div id="subBoardSection" class="sub-board-section" style="display: none;">
-                <h2 id="subBoardTitle">Sub-Boards</h2>
-                <div class="sub-boards">
-                    <!-- Sub-boards will be dynamically loaded here -->
-                </div>
-            </div>
-
-            <!-- Product Section (Initially Hidden) -->
-            <div id="productSection" class="product-section" style="display: none;">
-                <h2 id="boardTitle">Products</h2>
-                <div class="products">
-                    <!-- Products will be dynamically loaded here -->
-                </div>
-            </div>
-
-            <!-- Modal for Product Details -->
-            <div id="productModal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <div class="modal-slideshow">
-                        <img id="modalImage" src="" alt="Product Image">
-                    </div>
-                    <h2 id="modalTitle">Product Title</h2>
-                    <p id="modalDescription">Product description goes here. Detailed information about the product.</p>
-                    <button id="buyNowButton" class="buy-now">Buy Now</button>
-                </div>
-            </div>
-        </div>
-
-        <script src="script.js"></script>
+        <script src="js.js"></script>
     </body>
 
 </html>
