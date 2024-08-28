@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.profile-info {
+    margin-top: -50px;
+}
+
+.profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.bio {
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.bio h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.bio p {
+    color: #555;
+}
+
+.boards-section {
+    margin-top: 30px;
+}
+
+.boards-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.boards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.board {
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+}
+
+.board img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.board img:hover {
+    transform: scale(1.05);
+}
+
+.board p {
+    margin-top: 10px;
+    color: #555;
+}
+
+.sub-board-section {
+    margin-top: 30px;
+    display: none;
+}
+
+.sub-board-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.sub-boards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sub-board {
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+}
+
+.sub-board img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.sub-board p {
+    margin-top: 10px;
+    color: #555;
+}
+
+.product-section {
+    margin-top: 30px;
+    display: none;
+}
+
+.product-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+.product p {
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.buy-now {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buy-now:hover {
+    background-color: #333;
+}
