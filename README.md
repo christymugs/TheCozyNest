@@ -1,13 +1,23 @@
 # The Cozy Nest
 
-Welcome to **The Cozy Nest**, your ultimate destination for all things cozy and beautiful! Our website is designed to help you transform your living space into a sanctuary of comfort and style with a curated collection of inspiring home decor ideas and products.
+Welcome to **The Cozy Nest**, your premier destination for all things related to home necessities! We believe that your home should be a reflection of your personality while providing comfort and functionality. Whether you’re looking to spruce up your living space or find practical essentials, we have you covered.
 
-## About Us
+### Our Mission
 
-At The Cozy Nest, we invite you to embark on a journey to create a home that reflects your personality and taste. Whether you prefer sleek modern designs or rustic charm, we offer the finest products and expert tips to inspire your creativity.
+Our mission is simple: to make your home a haven of warmth and elegance. We aim to provide high-quality products that cater to your everyday needs while adding a touch of beauty to your surroundings. With us, you can easily find the perfect items that align with your lifestyle and aesthetic preferences.
 
-### Mission
-Our mission is to provide you with everything you need to turn your house into the home of your dreams. Explore our handpicked favorites and discover how easy it is to add a personal touch to your space.
+## Clone Repository
+  git clone https://github.com/your-username/cozy-nest.git
 
-## Project Structure
-/cozy-nest │ ├── api │ └── products.js # API endpoint for managing products │ ├── assets # Folder for images and assets │ ├── about.png │ └── about2.jpg │ ├── index.html # Main landing page ├── about.html # About page ├── contact.html # Contact page ├── shop.html # Shop page ├── style.css # Stylesheet for the website └── js.js # JavaScript functionality
+  cd cozy-nest
+
+
+## Built With
+
+- HTML
+- CSS
+- JavaScript
+- Node.js 
+- PostgreSQL 
+- BI Tools: Tableau 
+
