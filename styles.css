@@ -1,48 +1,608 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #8C6451;
+    /* Example for buttons, links */
+    --background-color: #f5ebe3;
+    /* Example for background, secondary elements */
+    --accent-color: #4A3F35;
+    /* Example for text, borders */
+    --highlight-color: #D4A373;
+    /* Example for highlights, hover effects */
+}
+
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f3f3;
+    background-color: #f5ebe3;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    background-image: url('assets/header.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100vh;
+    color: #F5F3EC;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.268);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* Ensure hero content is above the pseudo-element */
+}
+
+/* Nav Styling */
+
+
+header h2,
+nav {
+    position: relative;
+    z-index: 2;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+.nav-list li {
+    margin-left: 20px;
+    position: relative;
+}
+
+/* Styling the nav links */
+.nav-list a {
+    text-decoration: none;
+    color: #F5F3EC;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 0 10px;
+    /* Add padding to separate the border and text */
+}
+
+/* Animation for Hover Effect */
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #D4A373;
+    /* Highlight color */
+    transition: width 0.3s ease;
+}
+
+/* Hover Effects */
+.nav-list a:hover {
+    color: var(--highlight-color);
+    /* Change text color on hover */
+    transform: scale(1.1);
+    /* Slight zoom effect */
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+    /* Slide in the underline */
+}
+
+/* Adding dividers between nav items */
+.nav-list li+li::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    /* Adjusts space between the divider and the text */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    /* Height of the divider line */
+    border-left: 1px solid #F5F3EC;
+    /* Color and style of the divider */
+}
+
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-family: "Maname", serif;
+    font-weight: lighter;
+    font-size: 74px;
+    font-style: normal;
+    margin-bottom: 30px;
+}
+
+.hero-content p {
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+
+.button {
+    padding: 20px 60px 20px;
+    background-color: #d1baa1;
+    color: #36302A;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #b8a48f;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Featured Products Section */
+/* Featured Products Section */
+.featured-products {
+    padding: 50px 20px;
+    background-color: #f5ebe3;
+    text-align: center;
+}
+
+/* Product Container Styling */
+.product {
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    text-decoration: none;
+    /* Initially remove the underline */
+    color: inherit;
+    /* Ensure the text color matches the surrounding text */
+    position: relative;
+    /* Required for the animation effect */
+    overflow: hidden;
+    /* Hide overflow to prevent unwanted scrollbars */
+}
+
+/* Image inside the product container */
+.product img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Ensures the image covers the entire circle */
+    transition: transform 0.6s ease;
+    /* Smooth transition for the twirl effect */
+}
+
+/* Product text styling */
+.product h3 {
+    font-size: 1.2em;
+    margin-top: 15px;
+    color: #36302A;
+    text-decoration: underline;
+    /* Add underline to both the title and price */
+    text-decoration-color: inherit;
+    /* Ensure the underline color matches the text color */
+}
+
+.product p {
+    font-size: 1em;
+    color: #36302A;
+    margin-top: 5px;
+    /* Adds space between the title and the price */
+}
+
+/* Apply twirl animation on hover */
+.product:hover img {
+    animation: twirl 0.6s ease-in-out;
+}
+
+.featured-products h2 {
+    font-size: 56px;
+    margin-bottom: 30px;
+    font-weight: lighter;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.button-dark {
+    padding: 20px 60px;
+    background-color: #36302A;
+    color: #EFEDE5;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 40px;
+    transition: background-color 0.3s;
+}
+
+
+.button-dark:hover {
+    background-color: #5A544D;
+}
+
+/* Signup Section */
+.signup-section {
+    padding: 50px 20px;
+    background-color: #f5ebe3;
+    text-align: center;
+}
+
+.signup-section h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.signup-section p {
+    margin-bottom: 30px;
+}
+
+.signup-section form {
+    margin-bottom: 20px;
+}
+
+.signup-section input[type="email"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 250px;
+    margin-right: 10px;
+}
+
+.signup-section button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    background-color: #574C40;
+    color: #EFEDE5;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-section button:hover {
+    background-color: #3c2f29;
+}
+
+.footer-links {
+    margin-top: 20px;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    text-decoration: underline;
+    color: #37312A;
+    text-decoration-color: inherit;
+}
+
+
+.content {
+    padding: 40px;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+.nav-bar li {
+    margin-left: 20px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #36302A;
+}
+
+.about-section,
+.cta-section,
+.newsletter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.text-container {
+    color: #36302A;
+}
+
+.about-section .text-container,
+.cta-section .cta-container {
+    width: 50%;
+    padding-right: 20px;
+}
+
+.about-section .text-container p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.about-section .image-container,
+.cta-section .image-container {
+    width: 100%;
+    position: relative;
+}
+
+
+.about-section img,
+.cta-section img {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.cta-section .cta-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #F5F3EC;
+}
+
+.cta-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.shop-button {
+    padding: 15px 30px;
+    background-color: #B9A58F;
+    color: #36302A;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.slide-up {
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* Navigation Section Styling */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px 50px;
+    background-color: #f5ebe3;
+    border-bottom: 2px solid #4e3b28;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.navcontact {
+    display: flex;
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.container {
+.navcontact li {
+    margin-left: 20px;
+    position: relative;
+}
+
+/* Styling the nav links */
+.navcontact a {
+    text-decoration: none;
+    color: #4e3b28;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 0 10px;
+}
+
+/* Animation for Hover Effect */
+.navcontact a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #d4a373;
+    transition: width 0.3s ease;
+}
+
+/* Hover Effects */
+.navcontact a:hover {
+    color: #d4a373;
+    transform: scale(1.1);
+}
+
+.navcontact a:hover::after {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
 }
 
-.header-image img {
+/* Adding dividers between nav items */
+.navcontact li+li::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    border-left: 1px solid #4e3b28;
+}
+
+/* Contact Form Styles */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+    max-width: 1200px;
     width: 100%;
-    border-radius: 20px;
+    box-sizing: border-box;
 }
 
-.profile-info {
-    margin-top: -50px;
+.contact-left {
+    max-width: 45%;
+    /* Reduced width to allow more space for the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.profile-pic img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 5px solid white;
+.contact-info {
+    margin-bottom: 40px;
+    /* Increased spacing between "Contact Us" and the form */
 }
 
-.bio {
-    margin-top: 20px;
-    padding: 0 20px;
+.contact-info h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
 }
 
-.bio h1 {
-    font-size: 24px;
+.contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #4e3b28;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+}
+
+.contact-form {
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 5px;
+}
+
+.name-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+input,
+textarea {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #f5ebe3;
+    /* Match the background color */
+    border: 1px solid #4e3b28;
+    /* Border matches text color */
+    border-radius: 30px;
     margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #4e3b28;
+    /* Text color inside the fields */
 }
 
-.bio p {
-    color: #555;
+.name-fields input {
+    width: 48%;
 }
 
-.boards-section {
+textarea {
+    height: 150px;
+    border-radius: 15px;
+}
+
+button {
+    background-color: #4e3b28;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #3c2e21;
+}
+
+.contact-image {
+    max-width: 45%;
+    /* Ensure the image takes a good amount of space */
+    margin-left: 95px;
+    /* Automatically pushes the image to the right side */
+    padding-left: 90px;
+    /* Optional: Add extra padding if needed */
+}
+
+.contact-image img {
+    width: 140%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.icon {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.boards-section,
+.subboards-section {
     margin-top: 30px;
 }
 
@@ -51,152 +611,177 @@ body {
     margin-bottom: 20px;
 }
 
-.boards {
+/* Boards Section */
+.boards,
+.sub-boards,
+.products,
+.subboards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.board {
+.board,
+.sub-board,
+.product,
+.subboard {
+    flex: 1 1 calc(25% - 20px);
+    /* 4 items per row with spacing */
     margin: 10px;
     text-align: center;
-    width: 200px;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-.board img {
+/* Shine effect */
+.board img,
+.sub-board img,
+.subboard img {
     width: 100%;
+    height: 200px;
+    /* Fixed height for uniform size */
+    object-fit: cover;
+    /* Ensure images cover the area */
     border-radius: 10px;
-    transition: none;
-    /* Remove any transition effects */
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.board:hover img {
-    transform: none;
-    /* Ensure no transformation occurs on hover */
-}
-
-
-.board p {
-    margin-top: 10px;
-    color: #555;
-}
-
-.sub-board-section {
-    margin-top: 30px;
-    display: none;
-}
-
-.sub-board-section h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-.sub-boards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.sub-board {
-    margin: 10px;
-    text-align: center;
-    width: 200px;
-    cursor: pointer;
-}
-
-.sub-board img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.sub-board p {
-    margin-top: 10px;
-    color: #555;
-}
-
-.product-section {
-    margin-top: 30px;
-    display: none;
-}
-
-.product-section h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.product {
-    margin: 10px;
-    text-align: center;
-    width: 200px;
-    cursor: pointer;
-}
-
-.product img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-
-.product p {
-    margin-top: 10px;
-    color: #555;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
+.board img::before,
+.subboard img::before {
+    content: '';
+    position: absolute;
     top: 0;
+    left: -100%;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.5);
+    transition: left 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
 }
 
-.modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
+.board img:hover::before,
+.sub-board img:hover::before,
+.subboard img:hover::before {
+    left: 100%;
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+.board img:hover,
+.sub-board img:hover,
+.subboard img:hover {
+    transform: scale(1.05);
 }
 
-.close:hover,
-.close:focus {
-    color: black;
+.board p,
+.sub-board p,
+.product p,
+.subboard p {
+    margin-top: 10px;
+    color: #555;
+}
+
+.board p,
+.board a,
+.subboard p {
     text-decoration: none;
-    cursor: pointer;
+    font-size: 20px;
+    color: #3c2e21;
+
 }
 
-.buy-now {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #555;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+/* subboards */
+.content {
+    flex: 1;
+    padding: 20px;
 }
 
-.buy-now:hover {
-    background-color: #333;
+.content {
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.content h2 {
+    font-size: 48px;
+}
+
+
+.main-layout {
+    display: flex;
+}
+
+.content p {
+    font-size: 20px;
+    max-width: 600px;
+    /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    /* Center the text block */
+    line-height: 1.5;
+}
+
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #EDE4DA;
+}
+
+.sidebar h3 {
+    margin-bottom: 15px;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 28px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+    position: relative;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #36302A;
+    font-size: 20px;
+    display: block;
+    padding: 8px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #D7C7B5;
+}
+
+.sidebar ul li ul {
+    display: none;
+    padding-left: 20px;
+    border-left: 2px solid #574C40;
+    margin-top: 10px;
+}
+
+.sidebar ul li ul li a {
+    color: #574C40;
+    font-size: 18px;
+}
+
+.arrow {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    font-size: 14px;
+    color: #574C40;
+}
+
+.active {
+    font-weight: bold;
+    color: #d9534f;
+    /* Adjust the color to your theme */
 }
