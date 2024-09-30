@@ -8,12 +8,6 @@ Welcome to **The Cozy Nest**, your premier destination for all things related to
 
 Our mission is simple: to make your home a haven of warmth and elegance. We aim to provide high-quality products that cater to your everyday needs while adding a touch of beauty to your surroundings. With us, you can easily find the perfect items that align with your lifestyle and aesthetic preferences.
 
-## Clone Repository
-  git clone https://github.com/your-username/cozy-nest.git
-
-  cd cozy-nest
-
-
 ## Built With
 
 - HTML
